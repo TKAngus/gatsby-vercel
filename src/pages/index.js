@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useStaticQuery, Link, graphql } from "gatsby"
 import '../styles/index.css';
 
 function Index({data}) {
@@ -12,12 +13,23 @@ function Index({data}) {
     }
     getDate();
   }, []);
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
   return (
     <main>
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
       </Helmet>
-      <h1>Gatsby + Node.js (TypeScript) API</h1>
+      <h1>{data.site.siteMetadata.title}</h1>
       <h2>
         Deployed with{' '}
         <a

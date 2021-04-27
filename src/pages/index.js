@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, Link, graphql } from "gatsby"
 import '../styles/index.css';
 
-function Index({data}) {
+function Index() {
   const [date, setDate] = useState(null);
   useEffect(() => {
     async function getDate() {

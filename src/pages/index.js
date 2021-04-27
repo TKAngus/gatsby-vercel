@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import '../styles/index.css';
 
-function Index() {
+function Index({data}) {
   const [date, setDate] = useState(null);
   useEffect(() => {
     async function getDate() {
@@ -15,7 +15,7 @@ function Index() {
   return (
     <main>
       <Helmet>
-        <title>{this.props.data.site.siteMetadata.title}</title>
+        <title>{data.site.siteMetadata.title}</title>
       </Helmet>
       <h1>Gatsby + Node.js (TypeScript) API</h1>
       <h2>

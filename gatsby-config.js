@@ -1,17 +1,24 @@
 module.exports = {
+  // Customize your site metadata:
   siteMetadata: {
-    title: 'Hello World!',
+    title: `Title`,
+    author: `My Name`,
+    description: `My site description...`,
+    social: [
+      {
+        name: `twitter`,
+        url: `https://twitter.com/gatsbyjs`,
+      },
+      {
+        name: `github`,
+        url: `https://github.com/gatsbyjs`,
+      },
+    ],
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'Gatsby + Node.js (TypeScript) API',
-        short_name: 'Gatsby + Node.js (TypeScript)',
-        start_url: '/',
-        icon: 'src/images/gatsby-icon.png',
-      },
+      resolve: `gatsby-theme-blog`,
+      options: {},
     },
   ],
-};
+}
